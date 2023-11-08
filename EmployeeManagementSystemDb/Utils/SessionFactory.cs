@@ -1,4 +1,5 @@
-﻿using FluentNHibernate.Cfg;
+﻿using EmployeeManagementSystemDb.Map;
+using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Instances;
@@ -37,10 +38,27 @@ namespace Logic.Utils
             //        .Conventions.Add<TableNameConvention>()
             //        .Conventions.Add<HiLoConvention>()
             //    );
-            FluentConfiguration configuration = Fluently.Configure()
-    .Database(SQLiteConfiguration.Standard.UsingFile("EmployeeManagementSystemDb"))
-    .Mappings(m => m.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()));
+            //FluentConfiguration configuration = Fluently.Configure()
+            //    .Database(
+            //        MsSqlConfiguration.MsSql2012.ConnectionString(CONNECTION_STRING) // Set your SQL Server connection string here
+            //    )
+            //    .Mappings(m => m.FluentMappings.AddFromAssemblyOf<EmployeeMap>()
+            //               .AddFromAssemblyOf<ProjectMap>());
+
+
+            var configuration = Fluently.Configure()
+    .Database(
+        MsSqlConfiguration.MsSql2012
+        .ConnectionString(CONNECTION_STRING)
+        .ShowSql() // Optional: Show SQL statements in the console
+    )
+    .Mappings(m => m.FluentMappings.AddFromAssemblyOf<EmployeeMap>()
+                           .AddFromAssemblyOf<ProjectMap>());
+
+            //var sessionFactory = fluentConfiguration.BuildSessionFactory();
             return configuration.BuildSessionFactory();
+
+
         }
 
         private class OtherConversions : IHasManyConvention, IReferenceConvention
