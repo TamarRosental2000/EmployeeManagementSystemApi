@@ -33,7 +33,7 @@ namespace Logic.Utils
             }
         }
 
-        internal T Get<T>(long id)
+        internal T Get<T>(int id)
             where T : class
         {
             return _session.Get<T>(id);

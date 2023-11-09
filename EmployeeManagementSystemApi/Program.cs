@@ -23,6 +23,7 @@ builder.Services.AddSingleton<UnitOfWork>();
 builder.Services.AddSingleton<SessionFactory>();
 builder.Services.AddSingleton<ValidateRequest>();
 builder.Services.AddSingleton<EmployeeService>();
+builder.Services.AddSingleton<Service>();
 
 
 var app = builder.Build();

@@ -32,6 +32,15 @@ namespace EmployeeManagementSystemDb.Command
                 _unitOfWork.Commit();
             }
         }
+        public Project GetProject(int projectId)
+        {
+            return _unitOfWork.Get<Project>(projectId);
+ 
+        }
+        public Employee GetEmployee(int employeeId)
+        {
+            return _unitOfWork.Get<Employee>(employeeId);
+        }
     }
 
 }

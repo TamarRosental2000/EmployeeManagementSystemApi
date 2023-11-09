@@ -5,7 +5,6 @@ namespace EmployeeManagementSystemDb.Request;
 
 public partial class EmployeeRequest
 {
-    public int EmployeeId { get; set; }
 
     public string FirstName { get; set; } = null!;
 
@@ -17,5 +16,4 @@ public partial class EmployeeRequest
 
     public decimal Salary { get; set; }
 
-    //public virtual ICollection<EmployeeProject> EmployeeProjects { get; set; } = new List<EmployeeProject>();
-}
+ }
