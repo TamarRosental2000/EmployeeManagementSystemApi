@@ -4,6 +4,7 @@ using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Instances;
 using FluentNHibernate.Mapping;
+using Microsoft.EntityFrameworkCore;
 using NHibernate;
 using System.Reflection;
 
@@ -44,6 +45,8 @@ namespace Logic.Utils
             //    )
             //    .Mappings(m => m.FluentMappings.AddFromAssemblyOf<EmployeeMap>()
             //               .AddFromAssemblyOf<ProjectMap>());
+            //"Database=EmployeeManagement;Server=Laptop-10JSI7Q1;Trusted_Connection=True;Encrypt=false"
+            //    dotnet ef dbcontext scaffold "Database=EmployeeManagement;Server=Laptop-10JSI7Q1;Trusted_Connection=True;Encrypt=false" Microsoft.EntityFrameworkCore.SqlServer - o Models - f
 
 
             var configuration = Fluently.Configure()

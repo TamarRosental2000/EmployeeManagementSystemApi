@@ -41,14 +41,14 @@ public partial class EmployeeManagementContext : DbContext
                     r => r.HasOne<Project>().WithMany()
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__EmployeeP__Proje__3C69FB99"),
+                        .HasConstraintName("FK__EmployeeP__Proje__4AB81AF0"),
                     l => l.HasOne<Employee>().WithMany()
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__EmployeeP__Emplo__3B75D760"),
+                        .HasConstraintName("FK__EmployeeP__Emplo__49C3F6B7"),
                     j =>
                     {
-                        j.HasKey("EmployeeId", "ProjectId").HasName("PK__Employee__6DB1E4FE8F71FB9B");
+                        j.HasKey("EmployeeId", "ProjectId").HasName("PK__Employee__6DB1E4FEC808F863");
                         j.ToTable("EmployeeProjects");
                     });
         });

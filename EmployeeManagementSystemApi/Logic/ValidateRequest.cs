@@ -1,5 +1,6 @@
 ﻿using EmployeeManagementSystemApi.Controllers;
 using EmployeeManagementSystemDb.Models;
+using EmployeeManagementSystemDb.Request;
 
 namespace EmployeeManagementSystemApi.Logic
 {
