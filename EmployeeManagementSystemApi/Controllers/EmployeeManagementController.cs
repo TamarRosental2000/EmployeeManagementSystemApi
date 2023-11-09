@@ -2,6 +2,7 @@ using EmployeeManagementSystemApi.Logic;
 using EmployeeManagementSystemDb.Command;
 using EmployeeManagementSystemDb.Models;
 using EmployeeManagementSystemDb.Request;
+using EmployeeManagementSystemDb.Utils;
 using Logic.Utils;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -101,12 +102,6 @@ namespace EmployeeManagementSystemApi.Controllers
         {
             try
             {
-                //var errMsg = _ValidateRequest.ValidateEmployee(request);
-                //if (!string.IsNullOrEmpty(errMsg))
-                //{
-                //    _logger.Log(LogLevel.Error, errMsg);
-                //    return BadRequest(request);
-                //}
                 
                 var project = _service.GetProject(projectId);
                 var employee = _service.GetEmployee(employeeId);

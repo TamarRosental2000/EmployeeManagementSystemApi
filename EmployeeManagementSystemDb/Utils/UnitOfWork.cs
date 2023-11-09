@@ -1,9 +1,10 @@
 ﻿using System.Data;
+using EmployeeManagementSystemDb.Utils;
 using NHibernate;
 
 namespace Logic.Utils
 {
-    public class UnitOfWork
+    public class UnitOfWork:IUnitOfWork
     {
         private readonly ISession _session;
         private readonly ITransaction _transaction;
@@ -27,24 +28,20 @@ namespace Logic.Utils
             }
             finally
             {
-                ////_isAlive = false;
-                //_transaction.Dispose();
-                //_session.Dispose();
-                //_session.BeginTransaction();
             }
         }
 
-        internal T Get<T>(int id)
+        public T Get<T>(int id)
             where T : class
         {
             return _session.Get<T>(id);
         }
-        internal void SaveOrUpdate<T>(T entity)
+        public void SaveOrUpdate<T>(T entity)
         {
             _session.SaveOrUpdate(entity);
         }
 
-        internal void Delete<T>(T entity)
+        public void Delete<T>(T entity)
         {
             _session.Delete(entity);
         }
