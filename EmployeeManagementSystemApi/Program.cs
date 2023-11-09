@@ -20,6 +20,7 @@ builder.Services.AddMvc();
 //builder.Services.AddDbContext<DbContextFactory>();
 
 builder.Services.AddScoped<UnitOfWork>();
+builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
 builder.Services.AddScoped<SessionFactory>();
 builder.Services.AddSingleton<ValidateRequest>();
 builder.Services.AddScoped<EmployeeService>();

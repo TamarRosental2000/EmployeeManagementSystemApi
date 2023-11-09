@@ -1,5 +1,4 @@
 ﻿using EmployeeManagementSystemDb.Models;
-using EmployeeManagementSystemDb.Utils;
 using Logic.Utils;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ namespace EmployeeManagementSystemDb.Command
 {
     public class Service
     {
-        private readonly UnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
         public Service(UnitOfWork unitOfWork)
         {

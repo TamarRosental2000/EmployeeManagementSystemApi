@@ -1,5 +1,4 @@
 ﻿using System.Data;
-using EmployeeManagementSystemDb.Utils;
 using NHibernate;
 
 namespace Logic.Utils

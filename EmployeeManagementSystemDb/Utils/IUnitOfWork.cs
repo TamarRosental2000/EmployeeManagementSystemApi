@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeManagementSystemDb.Utils
+namespace Logic.Utils
 {
     public interface IUnitOfWork
     {

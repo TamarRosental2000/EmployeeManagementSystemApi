@@ -2,7 +2,6 @@ using EmployeeManagementSystemApi.Logic;
 using EmployeeManagementSystemDb.Command;
 using EmployeeManagementSystemDb.Models;
 using EmployeeManagementSystemDb.Request;
-using EmployeeManagementSystemDb.Utils;
 using Logic.Utils;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -14,7 +13,7 @@ namespace EmployeeManagementSystemApi.Controllers
     public class EmployeeManagementController : ControllerBase
     {
         private ValidateRequest _ValidateRequest;
-        private UnitOfWork _unitOfWork;
+        private IUnitOfWork _unitOfWork;
         private EmployeeService _employeeService;
         private Service _service;
         private Utils _utils;
