@@ -27,9 +27,10 @@ namespace Logic.Utils
             }
             finally
             {
-                //_isAlive = false;
+                ////_isAlive = false;
                 //_transaction.Dispose();
                 //_session.Dispose();
+                //_session.BeginTransaction();
             }
         }
 

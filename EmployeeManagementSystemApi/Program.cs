@@ -24,6 +24,7 @@ builder.Services.AddSingleton<SessionFactory>();
 builder.Services.AddSingleton<ValidateRequest>();
 builder.Services.AddSingleton<EmployeeService>();
 builder.Services.AddSingleton<Service>();
+builder.Services.AddSingleton<Utils>();
 
 
 var app = builder.Build();
