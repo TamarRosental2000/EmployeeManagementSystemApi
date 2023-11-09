@@ -37,32 +37,6 @@ namespace EmployeeManagementSystemApi.Controllers
         /// <summary>
         /// Add Employee.
         /// </summary>
-        [Route("create/Employee2")]
-        [HttpPost]
-        [ProducesResponseType((int)HttpStatusCode.Created)]
-        public async Task<IActionResult> AddEmployee2([FromBody] Employee request)
-        {
-            try
-            {
-                var errMsg = _ValidateRequest.ValidateEmployee(request);
-                if (!string.IsNullOrEmpty(errMsg))
-                {
-                    _logger.Log(LogLevel.Error, errMsg);
-                    return BadRequest(request);
-                }
-                _employeeService.SaveOrUpdateEmployee(request);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                _logger.Log(LogLevel.Error, ex.Message);
-
-                return BadRequest(ex.Message);
-            }
-        }
-        /// <summary>
-        /// Add Employee.
-        /// </summary>
         [Route("create/Employee")]
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.Created)]
@@ -118,7 +92,7 @@ namespace EmployeeManagementSystemApi.Controllers
         /// <summary>
         /// Assign Project.
         /// </summary>
-        [Route("assign Project")]
+        [Route("assignProject")]
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         public async Task<IActionResult> AssignProject(int projectId,  int employeeId )
@@ -217,9 +191,6 @@ namespace EmployeeManagementSystemApi.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-        //update project ([FromBody] Project request, project id)
-        //update employee 
 
     }
 }

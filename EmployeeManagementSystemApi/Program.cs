@@ -19,11 +19,11 @@ dbContextOptionsBuilder.UseSqlServer("Database=EmployeeManagement;Server=Laptop-
 builder.Services.AddMvc();
 //builder.Services.AddDbContext<DbContextFactory>();
 
-builder.Services.AddSingleton<UnitOfWork>();
-builder.Services.AddSingleton<SessionFactory>();
+builder.Services.AddScoped<UnitOfWork>();
+builder.Services.AddScoped<SessionFactory>();
 builder.Services.AddSingleton<ValidateRequest>();
-builder.Services.AddSingleton<EmployeeService>();
-builder.Services.AddSingleton<Service>();
+builder.Services.AddScoped<EmployeeService>();
+builder.Services.AddScoped<Service>();
 builder.Services.AddSingleton<Utils>();
 
 
