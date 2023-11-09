@@ -11,8 +11,9 @@ namespace Logic.Utils
 
         public UnitOfWork(SessionFactory sessionFactory)
         {
+
             _session = sessionFactory.OpenSession();
-            _transaction = _session.BeginTransaction(IsolationLevel.ReadCommitted);
+            _transaction = _session.BeginTransaction();
         }
 
         public void Commit()
@@ -26,9 +27,9 @@ namespace Logic.Utils
             }
             finally
             {
-                _isAlive = false;
-                _transaction.Dispose();
-                _session.Dispose();
+                //_isAlive = false;
+                //_transaction.Dispose();
+                //_session.Dispose();
             }
         }
 
