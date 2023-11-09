@@ -39,7 +39,6 @@ namespace Logic.Utils
         {
             return _session.Get<T>(id);
         }
-
         internal void SaveOrUpdate<T>(T entity)
         {
             _session.SaveOrUpdate(entity);

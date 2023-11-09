@@ -12,7 +12,7 @@ namespace EmployeeManagementSystemApi.Logic
             _logger = logger;
         }
 
-        public string ValidateEmployee(Employee employee)
+        public string ValidateEmployee(EmployeeRequest employee)
         {
             if (employee == null)
             {
@@ -22,7 +22,50 @@ namespace EmployeeManagementSystemApi.Logic
             {
                 return "FirstName is Null Or Empty";
             }
+            if (string.IsNullOrEmpty(employee.LastName))
+            {
+                return "LastName is Null Or Empty";
+            }
+            if (string.IsNullOrEmpty(employee.Department))
+            {
+                return "Department is Null Or Empty";
+            }
+            if (employee.HireDate == DateTime.MinValue)
+            {
+                return "HireDate is required";
+            }
+            if (employee.Salary<0)
+            {
+                return "Salary is required";
+            }
             return string.Empty;
+        }
+
+        internal string ValidateId(int id)
+        {
+            if (id == null)
+            {
+                return "Employee is Null";
+            }
+            if (id<0)
+            {
+                return "EmployeeId is Invalid";
+            }
+            return string.Empty;
+        }
+
+        internal string ValidateProject(ProjectRequest projectRequest)
+        {
+            if (projectRequest.StartDate==DateTime.MinValue)
+            {
+                return "StartDate is required";
+            }
+            if (string.IsNullOrEmpty(projectRequest.ProjectName))
+            {
+                return "ProjectName is required";
+            }
+            return string.Empty;
+
         }
     }
 }
